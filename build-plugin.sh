@@ -52,12 +52,13 @@ cp $SLUG.php $SLUG.tmp
 sed "s/$DEFAULT_CLASS/$CLASS/g" $SLUG.tmp > $SLUG.php
 rm $SLUG.tmp
 
+cd ../
+
 cp readme.txt readme.tmp
 sed "s/$DEFAULT_NAME/$NAME/g" readme.tmp > readme.txt
 rm readme.tmp
 
-
-cd lang
+cd src/lang
 mv $DEFAULT_SLUG.pot $SLUG.pot
 
 cp $SLUG.pot $SLUG.tmp
