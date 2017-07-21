@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+  wordpress:
+    image: wordpress
+    ports:
+      - 8080:80
+    volumes:
+      - ./wordpress:/var/www/html
+    environment:
+      WORDPRESS_DB_PASSWORD: example
+
+  mysql:
+    image: mariadb:latest
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+
