@@ -33,7 +33,7 @@ rm changelog.txt
 echo "Updating plugin files..."
 
 cp gulpfile.js gulpfile.tmp
-sed "s/$DEFAULT_SLUG/$SLUG/g" gulpfilejk.tmp > gulpfile.js
+sed "s/$DEFAULT_SLUG/$SLUG/g" gulpfile.tmp > gulpfile.js
 rm gulpfile.tmp
 
 cd src
