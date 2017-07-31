@@ -9,7 +9,7 @@ read FOLDER
 printf "Initialise new git repo (y/n): "
 read NEWREPO
 
-DEFAULT_NAME="wp plugin template"
+DEFAULT_NAME="WP Plugin Template"
 DEFAULT_CLASS=${DEFAULT_NAME// /_}
 DEFAULT_TOKEN=$( tr '[A-Z]' '[a-z]' <<< $DEFAULT_CLASS)
 DEFAULT_SLUG=${DEFAULT_TOKEN//_/-}
@@ -25,12 +25,16 @@ echo "Removing git files..."
 mkdir -p $FOLDER
 cd $FOLDER/$SLUG
 
-rm -rf .git
+rm -rf .git/
 rm README.md
 rm build-plugin.sh
 rm changelog.txt
 
 echo "Updating plugin files..."
+
+cp gulpfile.js gulpfile.tmp
+sed "s/$DEFAULT_SLUG/$SLUG/g" gulpfilejk.tmp > gulpfile.js
+rm gulpfile.tmp
 
 cd src
 

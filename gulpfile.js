@@ -39,7 +39,7 @@ gulp.task('scss', function() {
 
 gulp.task('zip', () =>
     gulp.src('dist/**/*')
-        .pipe(zip('wp-plugin.zip'))
+        .pipe(zip('wp-plugin-template.zip'))
         .pipe(gulp.dest('./'))
 );
 

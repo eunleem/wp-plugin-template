@@ -67,7 +67,7 @@ class WP_Plugin_Template_Settings {
 	 * @return void
 	 */
 	public function add_menu_item () {
-		$page = add_options_page( __( 'Plugin Settings', 'wp-plugin-template' ) , __( 'Plugin Settings', 'wp-plugin-template' ) , 'manage_options' , $this->parent->_token . '_settings' ,  array( $this, 'settings_page' ) );
+		$page = add_options_page( __( 'New Plugin Settings', 'wp-plugin-template' ) , __( 'New Plugin Settings', 'wp-plugin-template' ) , 'manage_options' , $this->parent->_token . '_settings' ,  array( $this, 'settings_page' ) );
 		add_action( 'admin_print_styles-' . $page, array( $this, 'settings_assets' ) );
 	}
 
